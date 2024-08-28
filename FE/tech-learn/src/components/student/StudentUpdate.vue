@@ -22,10 +22,10 @@ const form = reactive({
 
 const router = useRouter();
 const route = useRoute();
-
+const apiUrl = process.env.VUE_APP_API_BASE_URL;
 onMounted(() => {
   const studentId = route.params.id;
-  axios.get(`http://localhost:3000/student/${studentId}`)
+  axios.get(`${apiUrl}/student/${studentId}`)
     .then(res => {
       form.age = res.data.age;
       form.name = res.data.name;

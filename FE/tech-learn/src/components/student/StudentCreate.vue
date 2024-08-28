@@ -19,9 +19,9 @@ const form = reactive({
   name: "",
   age: "",
 });
-
+const apiUrl = process.env.VUE_APP_API_BASE_URL;
 const handleSubmit = async () => {
-  const res = await axios.post("http://localhost:3000/student", form);
+  const res = await axios.post(`${apiUrl}/student`, form);
   if (res.status === 201) {
     router.push("/").then(() => {
       toast.success("Create success !", {

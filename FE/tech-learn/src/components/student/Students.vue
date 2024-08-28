@@ -41,14 +41,18 @@ import Modal from '../Modal/Modal.vue';
     let list = ref();
     let showModal = ref(false);
     let selectedObject = ref(null);
+    
+    const apiUrl = process.env.VUE_APP_API_BASE_URL;
 
     onMounted(()=> {
-        axios.get("http://localhost:3000/student")
+        // axios.get("http://localhost:3000/student")
+        axios.get(`${apiUrl}/student`)
         .then(response => (list.value = response.data));
     });
 
     const  handleDelete= async (data) =>{
-        axios.delete(`http://localhost:3000/student/${data.id}`)
+        axios.delete(`${apiUrl}/student/${data.id}`)
+        // axios.delete(`http://localhost:3000/student/${data.id}`)
         .then(response => (list.value = list.value.filter((item) => item.id !== data.id)));
         closeModal();
     }
