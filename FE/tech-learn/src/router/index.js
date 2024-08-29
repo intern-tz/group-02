@@ -12,7 +12,7 @@ const routes = [
   },
   {
     path: '/student/:id',
-    name: 'StudentDetail',
+    name: 'StudentUpdate',
     component: StudentUpdate,
     props: true
   },
