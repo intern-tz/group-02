@@ -35,9 +35,9 @@ import axios from 'axios';
 import { toast } from 'vue3-toastify';
 
 const router = useRouter();
-const form = reactive ({
-name: "",
-age:  "",
+const form = reactive({
+  name: "",
+  age: "",
 });
 
 const handleSubmit = async () => {
@@ -49,7 +49,19 @@ const handleSubmit = async () => {
       });
     } else{
         toast.error("Create success 11!");
-    }
+
+  const res = await axios.post("http://localhost:3000/student", form);
+  if (res.status === 201) {
+    router.push("/").then(() => {
+      toast.success("Create success !", {
+        autoClose: 2000
+      });
+    });
+  } else {
+    toast.error("Create success 11!");
+  }
+
+}
 }
 
 
@@ -140,3 +152,6 @@ const handleSubmit = async () => {
 
 
 </style>
+=======
+<style></style>
+>>>>>>> d0f2035f174c9d8de8e9854da85766e128c42a26
