@@ -2,12 +2,12 @@
   <form @submit.prevent="onSubmit" class="student-form">
     <h1>Thêm mới</h1>
     <div class="form-group">
-      <label for="fullName">Name:</label>
+      <label for="fullName">Họ và tên:</label>
       <input id="fullName" v-model="fullName" type="text" class="form-control" placeholder="Hãy Nhập Tên" />
       <span class="error-message">{{ nameError }}</span>
     </div>
     <div class="form-group">
-      <label for="age">Age:</label>
+      <label for="age">Tuổi:</label>
       <input id="age" v-model="age" type="number" class="form-control"  placeholder="Hãy Nhập Tuổi" />
       <span class="error-message">{{ ageError }}</span>
     </div>
@@ -36,10 +36,10 @@ const { handleSubmit, resetForm } = useForm({
     ,
     age: yup
       .number()
-      .typeError('*Phải là số')
-      .required('*Hãy nhập tuổi')
+      .typeError('* Phải là số')
+      .required('* Hãy nhập tuổi')
       .min(16, "* Tuổi phải lớn hơn 16")
-      .max(70,"*Tuổi bé lớn hơn 70"),
+      .max(70,"* Tuổi phải bé hơn 70"),
   }),
 });
 
