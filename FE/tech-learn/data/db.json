@@ -1,0 +1,20 @@
+{
+  "initialEvents": [
+    {
+      "id": "ee01",
+      "title": "okkkkkk",
+      "start": "2024-09-05",
+      "end": "2024-09-06",
+      "allDay": true,
+      "note": "okkkkkkkkk"
+    },
+    {
+      "id": "1cbe",
+      "title": "okkkkkk",
+      "start": "2024-09-06",
+      "end": "2024-09-07",
+      "allDay": true,
+      "note": "okkkkkkkkk"
+    }
+  ]
+}
